@@ -4,163 +4,102 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>P5JS Blow Bubbles Lesson</title>
+  <title>Blow Bubbles p5.js</title>
   <link rel="stylesheet" href="https://stackedit.io/style.css" />
 </head>
 
 <body class="stackedit">
-  <div class="stackedit__html">
-
-
-
-
-<title>Blow Bubbles p5.js</title>
-
-
-
-<div class="stackedit__html"><h1 id="creating-interactive-bubbles-with-p5.js">Creating Interactive Bubbles with p5.js</h1>
-</div><h2 id="introduction">Introduction:</h2>
+  <div class="stackedit__html"><h1 id="creating-interactive-bubbles-with-p5.js">Creating Interactive Bubbles with p5.js</h1>
+<h2 id="introduction">Introduction:</h2>
 <p>In this tutorial, we will create an interactive animation using p5.js. The animation will feature bubbles that move around the canvas, change colors, and respond to user interactions.</p>
 <p><strong>Prerequisites:</strong><br>
-</p><p>Basic knowledge of <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a> and <a href="https://p5js.org/">p5.js</a> is recommended.</p>
+Basic knowledge of <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a> and <a href="https://p5js.org/">p5.js</a> is recommended.</p>
 <h2 id="tutorial">Tutorial:</h2>
 <h3 id="step-1-setting-up-the-canvas">Step 1: Setting Up the Canvas**</h3>
-<pre class="  language-js"><code class="prism  language-js"><span class="token keyword">let</span> bubbles <span class="token operator">=</span>  <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<pre class=" language-js"><code class="prism  language-js"><span class="token keyword">let</span> bubbles <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-  
-
-<span class="token keyword">function</span>  <span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
-
-<span class="token function">createCanvas</span><span class="token punctuation">(</span><span class="token number">400</span><span class="token punctuation">,</span>  <span class="token number">400</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
+<span class="token keyword">function</span> <span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">createCanvas</span><span class="token punctuation">(</span><span class="token number">400</span><span class="token punctuation">,</span> <span class="token number">400</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-
 </code></pre>
 <ul>
-</ul><li>We start by creating a canvas of 400x400 pixels and declaring an array to store the bubbles in for later.</li>
-
+<li>We start by creating a canvas of 400x400 pixels and declaring an array to store the bubbles in for later.</li>
+</ul>
 <h3 id="step-2-creating-the-bubbles">Step 2: Creating the Bubbles</h3>
-<pre class="  language-js"><code class="prism  language-js"><span class="token keyword">function</span>  <span class="token function">createBubble</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
-
-<span class="token keyword">return</span>  <span class="token punctuation">{</span>
-
-x<span class="token punctuation">:</span>  <span class="token function">random</span><span class="token punctuation">(</span>width<span class="token punctuation">)</span><span class="token punctuation">,</span>
-
-y<span class="token punctuation">:</span>  <span class="token function">random</span><span class="token punctuation">(</span>height<span class="token punctuation">)</span><span class="token punctuation">,</span>
-
-radius<span class="token punctuation">:</span>  <span class="token number">0</span><span class="token punctuation">,</span>
-
-color<span class="token punctuation">:</span>  <span class="token function">color</span><span class="token punctuation">(</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token function">random</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token function">random</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-
-growSpeed<span class="token punctuation">:</span>  <span class="token function">random</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>  <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
+<pre class=" language-js"><code class="prism  language-js"><span class="token keyword">function</span> <span class="token function">createBubble</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    x<span class="token punctuation">:</span> <span class="token function">random</span><span class="token punctuation">(</span>width<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    y<span class="token punctuation">:</span> <span class="token function">random</span><span class="token punctuation">(</span>height<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    radius<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    color<span class="token punctuation">:</span> <span class="token function">color</span><span class="token punctuation">(</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">random</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">random</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    growSpeed<span class="token punctuation">:</span> <span class="token function">random</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-  
+<span class="token keyword">function</span> <span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">createCanvas</span><span class="token punctuation">(</span><span class="token number">400</span><span class="token punctuation">,</span> <span class="token number">400</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token keyword">function</span>  <span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
-
-<span class="token function">createCanvas</span><span class="token punctuation">(</span><span class="token number">400</span><span class="token punctuation">,</span>  <span class="token number">400</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-  
-
-<span class="token keyword">for</span>  <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span>  <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span>  <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
-
-bubbles<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token function">createBubble</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    bubbles<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token function">createBubble</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-
-<span class="token punctuation">}</span>
-
 </code></pre>
 <ul>
-</ul><li>We’ve defined a function <code>createBubble()</code> that returns an object representing a bubble.</li>
+<li>We’ve defined a function <code>createBubble()</code> that returns an object representing a bubble.</li>
 <li>Each bubble has properties such as <code>x</code>, <code>y</code>, <code>radius</code>, <code>color</code>, and <code>growSpeed</code>.</li>
 <li>In the <code>setup()</code> function, we create an array <code>bubbles</code> and populate it with 10 bubbles using the <code>createBubble()</code> function.</li>
-
+</ul>
 <p><strong>Step 3: Drawing and Animating the Bubbles</strong></p>
-<pre class="  language-js"><code class="prism  language-js"><span class="token keyword">function</span>  <span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
+<pre class=" language-js"><code class="prism  language-js"><span class="token keyword">function</span> <span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">background</span><span class="token punctuation">(</span><span class="token number">82</span><span class="token punctuation">,</span> <span class="token number">175</span><span class="token punctuation">,</span> <span class="token number">199</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">stroke</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token function">background</span><span class="token punctuation">(</span><span class="token number">82</span><span class="token punctuation">,</span>  <span class="token number">175</span><span class="token punctuation">,</span>  <span class="token number">199</span><span class="token punctuation">,</span>  <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> bubbles<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> bubble <span class="token operator">=</span> bubbles<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    bubble<span class="token punctuation">.</span>radius <span class="token operator">+=</span> bubble<span class="token punctuation">.</span>growSpeed<span class="token punctuation">;</span>
 
-<span class="token function">stroke</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>bubble<span class="token punctuation">.</span>radius <span class="token operator">&gt;</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      bubble<span class="token punctuation">.</span>radius <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      bubble<span class="token punctuation">.</span>x <span class="token operator">=</span> <span class="token function">random</span><span class="token punctuation">(</span>width<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      bubble<span class="token punctuation">.</span>y <span class="token operator">=</span> <span class="token function">random</span><span class="token punctuation">(</span>height<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      bubble<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token function">color</span><span class="token punctuation">(</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">random</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">random</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-  
-
-<span class="token keyword">for</span>  <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span>  <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> bubbles<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
-
-<span class="token keyword">let</span> bubble <span class="token operator">=</span> bubbles<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-
-bubble<span class="token punctuation">.</span>radius <span class="token operator">+=</span> bubble<span class="token punctuation">.</span>growSpeed<span class="token punctuation">;</span>
-
-  
-
-<span class="token keyword">if</span>  <span class="token punctuation">(</span>bubble<span class="token punctuation">.</span>radius <span class="token operator">&gt;</span>  <span class="token number">200</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
-
-bubble<span class="token punctuation">.</span>radius <span class="token operator">=</span>  <span class="token number">0</span><span class="token punctuation">;</span>
-
-bubble<span class="token punctuation">.</span>x <span class="token operator">=</span>  <span class="token function">random</span><span class="token punctuation">(</span>width<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-bubble<span class="token punctuation">.</span>y <span class="token operator">=</span>  <span class="token function">random</span><span class="token punctuation">(</span>height<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-bubble<span class="token punctuation">.</span>color <span class="token operator">=</span>  <span class="token function">color</span><span class="token punctuation">(</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token function">random</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token function">random</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
+    <span class="token function">fill</span><span class="token punctuation">(</span>bubble<span class="token punctuation">.</span>color<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">ellipse</span><span class="token punctuation">(</span>bubble<span class="token punctuation">.</span>x<span class="token punctuation">,</span> bubble<span class="token punctuation">.</span>y<span class="token punctuation">,</span> bubble<span class="token punctuation">.</span>radius <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-
-  
-
-<span class="token function">fill</span><span class="token punctuation">(</span>bubble<span class="token punctuation">.</span>color<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token function">ellipse</span><span class="token punctuation">(</span>bubble<span class="token punctuation">.</span>x<span class="token punctuation">,</span> bubble<span class="token punctuation">.</span>y<span class="token punctuation">,</span> bubble<span class="token punctuation">.</span>radius <span class="token operator">*</span>  <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token punctuation">}</span>
-
-<span class="token punctuation">}</span>
-
 </code></pre>
 <ul>
-</ul><li>In the <code>draw()</code> function, we loop through each bubble in the <code>bubbles</code> array.</li>
+<li>In the <code>draw()</code> function, we loop through each bubble in the <code>bubbles</code> array.</li>
 <li>We update the <code>radius</code> of each bubble based on its <code>growSpeed</code>.</li>
 <li>If a bubble’s <code>radius</code> exceeds 200, we reset it to its initial state with a new position and color.</li>
 <li>We fill each bubble with its unique color and draw it as an ellipse with a diameter of <code>radius * 2</code>.</li>
-
+</ul>
 <p><strong>Step 4: Interactivity (Optional)</strong></p>
 <p>You can make the bubbles interactive by responding to user input. For example, you can change a bubble’s color when the mouse pointer is close to it or add more bubbles when the user clicks on the canvas.</p>
-<pre class="  language-js"><code class="prism  language-js">`<span class="token keyword">function</span>  <span class="token function">mouseMoved</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
-
-<span class="token keyword">for</span>  <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span>  <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> bubbles<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>
-
-<span class="token keyword">let</span> bubble <span class="token operator">=</span> bubbles<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-
-<span class="token keyword">let</span> distance <span class="token operator">=</span>  <span class="token function">dist</span><span class="token punctuation">(</span>mouseX<span class="token punctuation">,</span> mouseY<span class="token punctuation">,</span> bubble<span class="token punctuation">.</span>x<span class="token punctuation">,</span> bubble<span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">if</span>  <span class="token punctuation">(</span>distance <span class="token operator">&lt;</span> bubble<span class="token punctuation">.</span>radius<span class="token punctuation">)</span>  <span class="token punctuation">{</span>
-
-bubble<span class="token punctuation">.</span>color <span class="token operator">=</span>  <span class="token function">color</span><span class="token punctuation">(</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token function">random</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token function">random</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
+<pre class=" language-js"><code class="prism  language-js">`<span class="token keyword">function</span> <span class="token function">mouseMoved</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> bubbles<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> bubble <span class="token operator">=</span> bubbles<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> distance <span class="token operator">=</span> <span class="token function">dist</span><span class="token punctuation">(</span>mouseX<span class="token punctuation">,</span> mouseY<span class="token punctuation">,</span> bubble<span class="token punctuation">.</span>x<span class="token punctuation">,</span> bubble<span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>distance <span class="token operator">&lt;</span> bubble<span class="token punctuation">.</span>radius<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      bubble<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token function">color</span><span class="token punctuation">(</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">random</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">random</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-
-<span class="token punctuation">}</span>
-
-<span class="token punctuation">}</span>
-
 </code></pre>
 <ul>
-</ul><li>In this example, we change the color of bubbles when the mouse pointer is inside their radius.</li>
-
+<li>In this example, we change the color of bubbles when the mouse pointer is inside their radius.</li>
+</ul>
 <p><strong>Conclusion:</strong></p>
 <p>In this tutorial, we’ve created an interactive bubble animation using p5.js. You can further enhance this project by experimenting with additional features such as different shapes, animations, or sound effects.</p>
 <p>Feel free to explore and modify the code to create your own unique interactive animation with p5.js. Have fun and let your creativity flow!</p>
-
-<div>
-</div><iframe src="https://editor.p5js.org/353852907/full/6STdl5X9G" width="404" height="446"></iframe>
-<div></div>
-
-
-
 </div>
-</body>
+
+<div style="text-align: center;">
+    <iframe src="https://editor.p5js.org/353852907/full/6STdl5X9G" width="404" height="446"></iframe>
+    <div style="margin-bottom: 80px;"></div>
+  </div>
+  </body>
 
 </html>
